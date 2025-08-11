@@ -1,0 +1,78 @@
+<mujoco model="mevita">
+  <compiler angle="radian"/>
+
+  <asset>
+    <mesh name="base_link"    file="meshes/base_link.STL"/>
+    <mesh name="R_hip1_link"  file="meshes/R_hip1_link.STL"/>
+    <mesh name="R_hip2_link"  file="meshes/R_hip2_link.STL"/>
+    <mesh name="R_thigh_link" file="meshes/R_thigh_link.STL"/>
+    <mesh name="R_calf_link"  file="meshes/R_calf_link.STL"/>
+    <mesh name="R_foot_link"  file="meshes/R_foot_link.STL"/>
+    <mesh name="L_hip1_link"  file="meshes/L_hip1_link.STL"/>
+    <mesh name="L_hip2_link"  file="meshes/L_hip2_link.STL"/>
+    <mesh name="L_thigh_link" file="meshes/L_thigh_link.STL"/>
+    <mesh name="L_calf_link"  file="meshes/L_calf_link.STL"/>
+    <mesh name="L_foot_link"  file="meshes/L_foot_link.STL"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" pos="0.0 0.0 0.953">
+      <inertial pos="0.00928612 0.0 -0.0205788" quat="0.999988 -0.00483306 0.000392882 0.000118328" mass="8.0958" diaginertia="0.0584398 0.0379003 0.0334282"/>
+      <joint name="base_joint" type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="base_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="base_link"/>
+      <site name="base_link"/>
+      <body name="R_hip1_link" pos="0 -0.091 -0.19905">
+        <inertial pos="-0.011628 2.24199e-05 -0.0324188" quat="0.676779 -0.204837 -0.204831 0.676798" mass="0.195652" diaginertia="0.000168931 0.000147288 8.42578e-05"/>
+        <joint name="R_hip_y" pos="0 0 0" axis="0 0 1" range="-1.0472 1.0472" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+        <geom name="R_hip1_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="R_hip1_link"/>
+        <body name="R_hip2_link" pos="0.028 0 -0.071">
+          <inertial pos="-0.0848242 -0.0330786 -0.00239928" quat="0.348132 0.434935 0.644932 0.523162" mass="2.06273" diaginertia="0.00271558 0.00225942 0.00179094"/>
+          <joint name="R_hip_r" pos="0 0 0" axis="1 0 0" range="-0.4538 0.4538" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+          <geom name="R_hip2_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="R_hip2_link"/>
+          <body name="R_thigh_link" pos="-0.11155 -0.0665 0">
+            <inertial pos="0.0217259 -0.0386182 -0.127458" quat="0.706871 -0.00448149 -0.00410889 0.707316" mass="2.02695" diaginertia="0.0109864 0.00986959 0.00152478"/>
+            <joint name="R_hip_p" pos="0 0 0" axis="0 1 0" range="-3.1416 0.733" actuatorfrcrange="-48 48" armature="10.02e-3"/>
+            <geom name="R_thigh_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="R_thigh_link"/>
+            <body name="R_calf_link" pos="0 -0.007 -0.35">
+              <inertial pos="0.0388671 -0.0275443 -0.0744041" quat="0.709839 0.0115854 0.0155059 0.704098" mass="1.32255" diaginertia="0.00558024 0.00518984 0.000615996"/>
+              <joint name="R_knee_p" pos="0 0 0" axis="0 1 0" range="-0.349 2.7925" actuatorfrcrange="-48 48" armature="10.02e-3"/>
+              <geom name="R_calf_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="R_calf_link"/>
+              <body name="R_foot_link" pos="0 0.0055 -0.281417">
+                <inertial pos="0.034127 -0.0190532 -0.0172244" quat="0.459151 0.537731 0.537874 0.45904" mass="0.208121" diaginertia="0.000155411 0.000147351 2.41065e-05"/>
+                <joint name="R_ankle_p" pos="0 0 0" axis="0 1 0" range="-1.2217 1.0123" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+                <!-- <geom name="R_foot_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="R_foot_link"/> -->
+                <geom name="R_foot_link" type="capsule" rgba="0.752941 0.752941 0.752941 1" size="0.01916 0.052" pos="0.048 -0.01916 -0.03141" quat="0 0.706825 0 0.707388"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="L_hip1_link" pos="0 0.091 -0.19905">
+        <inertial pos="-0.011628 2.24199e-05 -0.0324188" quat="0.676779 -0.204837 -0.204831 0.676798" mass="0.195652" diaginertia="0.000168931 0.000147288 8.42578e-05"/>
+        <joint name="L_hip_y" pos="0 0 0" axis="0 0 1" range="-1.0472 1.0472" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+        <geom name="L_hip1_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="L_hip1_link"/>
+        <body name="L_hip2_link" pos="0.028 0 -0.071">
+          <inertial pos="-0.0848242 0.033044 -0.00243198" quat="0.521602 0.645715 0.436638 0.346888" mass="2.06273" diaginertia="0.002714 0.00226095 0.001791"/>
+          <joint name="L_hip_r" pos="0 0 0" axis="1 0 0" range="-0.4538 0.4538" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+          <geom name="L_hip2_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="L_hip2_link"/>
+          <body name="L_thigh_link" pos="-0.11155 0.0665 0">
+            <inertial pos="0.0217097 0.0386182 -0.12743" quat="0.707288 -0.00406213 -0.00444652 0.7069" mass="2.02695" diaginertia="0.0109864 0.00987117 0.0015232"/>
+            <joint name="L_hip_p" pos="0 0 0" axis="0 1 0" range="-3.1416 0.733" actuatorfrcrange="-48 48" armature="10.02e-3"/>
+            <geom name="L_thigh_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="L_thigh_link"/>
+            <body name="L_calf_link" pos="0 0.007 -0.35">
+              <inertial pos="0.0388984 0.0275443 -0.074354" quat="0.703314 0.0153454 0.0116081 0.710619" mass="1.32255" diaginertia="0.00558024 0.0051913 0.000614532"/>
+              <joint name="L_knee_p" pos="0 0 0" axis="0 1 0" range="-0.349 2.7925" actuatorfrcrange="-48 48" armature="10.02e-3"/>
+              <geom name="L_calf_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="L_calf_link"/>
+              <body name="L_foot_link" pos="0 -0.0055 -0.281417">
+                <inertial pos="0.034127 0.0190532 -0.0172244" quat="0.459041 0.537874 0.537731 0.45915" mass="0.208121" diaginertia="0.000155411 0.000147351 2.41065e-05"/>
+                <joint name="L_ankle_p" pos="0 0 0" axis="0 1 0" range="-1.2217 1.0123" actuatorfrcrange="-25 25" armature="4.14e-3"/>
+                <!-- <geom name="L_foot_link" type="mesh" rgba="0.752941 0.752941 0.752941 1" mesh="L_foot_link"/> -->
+                <geom name="L_foot_link" type="capsule" rgba="0.752941 0.752941 0.752941 1" size="0.01916 0.052" pos="0.048 0.01916 -0.03141" quat="0 0.706825 0 0.707388"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

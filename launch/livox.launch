@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model" default="mevita_dae" />
+  <param name="robot_description" textfile="$(find mevita)/models/$(arg model).urdf" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <include file="$(find mevita)/launch/msg_MID360.launch">
+    <arg name="multi_topic" default="1"/>
+  </include>
+
+  <node name="imu_filter" pkg="imu_filter_madgwick" type="imu_filter_node" output="screen">
+    <param name="use_mag" value="False"/>
+    <remap from="imu/data_raw" to="/livox/imu_192_168_1_123"/>
+    <remap from="imu/data" to="/livox/imu_filtered"/>
+  </node>
+
+  <node name="ps4joy_node" pkg="joy" type="joy_node" output="screen">
+    <remap from="joy" to="ps4joy/joy"/>
+  </node>
+</launch>

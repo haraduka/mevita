@@ -1,0 +1,79 @@
+<mujoco model="scene">
+  <option timestep="0.005"/>
+  <include file="meshes/mevita_long_mujoco.xml"/>
+
+  <!--
+  <default>
+    <joint armature="0.05" damping="1" limited="true" frictionloss="0.1"/>
+    <general dyntype="filterexact" dynprm="0.01"/>
+  </default>
+  -->
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6"  ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512"
+        height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+        rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5"
+        reflectance="0.2"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" pos="0 0 0.0" size="0 0 0.05" type="plane" material="groundplane"/>
+
+    <!-- box object -->
+    <!--
+    <body name="box" pos="0.8 0.0 0.05">
+      <geom size="0.2 0.25 0.03" type="box" rgba="0.8 0.6 0.4 1"/>
+    </body>
+    -->
+  </worldbody>
+
+  <actuator>
+    <general name="R_hip_y"     joint="R_hip_y"   ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+    <general name="R_hip_r"     joint="R_hip_r"   ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+    <general name="R_hip_p"     joint="R_hip_p"   ctrllimited="true" ctrlrange="-48 48" biastype="none"/>
+    <general name="R_knee_p"    joint="R_knee_p"  ctrllimited="true" ctrlrange="-48 48" biastype="none"/>
+    <general name="R_ankle_p"   joint="R_ankle_p" ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+    <general name="L_hip_y"     joint="L_hip_y"   ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+    <general name="L_hip_r"     joint="L_hip_r"   ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+    <general name="L_hip_p"     joint="L_hip_p"   ctrllimited="true" ctrlrange="-48 48" biastype="none"/>
+    <general name="L_knee_p"    joint="L_knee_p"  ctrllimited="true" ctrlrange="-48 48" biastype="none"/>
+    <general name="L_ankle_p"   joint="L_ankle_p" ctrllimited="true" ctrlrange="-25 25" biastype="none"/>
+  </actuator>
+
+  <sensor>
+    <gyro name="body_gyro_sensor" site="base_link"/>
+    <accelerometer name="body_acc_sensor" site="base_link"/>
+    <velocimeter name="body_vel_sensor" site="base_link"/>
+    <framequat name="body_quat_sensor" objtype="site" objname="base_link"/>
+  </sensor>
+
+  <keyframe>
+    <key name="STANDBY"
+      qpos="0.0 0.0 0.075 0.707 0.0 0.707 0.0
+            0 0 -3.14 2.7 -1.3 0 0 -3.14 2.7 -1.3"
+      ctrl="0 0 0 0 0 0 0 0 0 0" />
+  </keyframe>
+
+  <contact>
+    <exclude body1="base_link"      body2="R_hip1_link"/>
+    <exclude body1="R_hip1_link"    body2="R_hip2_link"/>
+    <exclude body1="R_hip2_link"    body2="R_thigh_link"/>
+    <exclude body1="R_thigh_link"   body2="R_calf_link"/>
+    <exclude body1="R_calf_link"    body2="R_foot_link"/>
+    <exclude body1="base_link"      body2="L_hip1_link"/>
+    <exclude body1="L_hip1_link"    body2="L_hip2_link"/>
+    <exclude body1="L_hip2_link"    body2="L_thigh_link"/>
+    <exclude body1="L_thigh_link"   body2="L_calf_link"/>
+    <exclude body1="L_calf_link"    body2="L_foot_link"/>
+  </contact>
+
+</mujoco>

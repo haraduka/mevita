@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="mevita">
+  <!-- world link -->
+  <link name="world"/>
+  <!-- float joint -->
+  <joint name="base_joint" type="floating">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00928611721589756 0.0 -0.0205788256368033" rpy="0.0 -0.0 0.0"/>
+      <mass value="8.0957985696312"/>
+      <inertia ixx="0.0584397725418765" ixy="4.74882558774436e-06" ixz="-1.96711943278022e-05" iyy="0.037899893912788" iyz="-4.32258628183686e-05" izz="0.0334286196447418"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/base_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/base_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="R_hip1_link">
+    <inertial>
+      <origin xyz="-0.0116280032776967 2.24198653703128e-05 -0.0324188147397766" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.195651670203217"/>
+      <inertia ixx="0.000127906547739082" ixy="-5.05375803664571e-10" ixz="2.90853360412574e-05" iyy="0.000168931407464894" iyz="-3.16933358392427e-10" izz="0.000103638809145105"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_hip1_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_hip1_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="R_hip2_link">
+    <inertial>
+      <origin xyz="-0.0848241977996927 -0.0330786304511408 -0.00239927683418034" rpy="0.0 -0.0 0.0"/>
+      <mass value="2.06272582516224"/>
+      <inertia ixx="0.00194208302225348" ixy="-0.000317634798503137" ixz="8.79932071664311e-05" iyy="0.00258512565408255" iyz="3.91813637448243e-05" izz="0.00223873838261095"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_hip2_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_hip2_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="R_thigh_link">
+    <inertial>
+      <origin xyz="0.0217259220360281 -0.0386181639861446 -0.127457750108459" rpy="0.0 -0.0 0.0"/>
+      <mass value="2.0269546279437"/>
+      <inertia ixx="0.00986835841885388" ixy="-6.47139447506295e-07" ixz="0.000101369974101054" iyy="0.0109863901998615" iyz="-4.95748858000217e-06" izz="0.00152601861254659"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_thigh_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_thigh_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="R_calf_link">
+    <inertial>
+      <origin xyz="0.038867142816782 -0.0275443103240817 -0.0744040654595665" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.32255100769777"/>
+      <inertia ixx="0.00518314311782858" ixy="2.1831048607277e-06" ixz="-0.0001751918500235" iyy="0.00558007158640056" iyz="-2.68494203987264e-05" izz="0.000622860993106399"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_calf_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_calf_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="R_foot_link">
+    <inertial>
+      <origin xyz="-0.000805699942805438 -0.0189471503813982 -0.0237547805244879" rpy="0 0 0" />
+      <mass value="0.214661212420411" />
+      <inertia ixx="4.02562164950406E-05" ixy="-1.0138237279121E-09" ixz="4.17012471797606E-06" iyy="0.000770002678918587" iyz="-1.83484988650801E-09" izz="0.000787274566684345"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_foot_long_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/R_foot_long_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="L_hip1_link">
+    <inertial>
+      <origin xyz="-0.0116280032776967 2.24198653701602e-05 -0.0324188147397767" rpy="0.0 -0.0 0.0"/>
+      <mass value="0.195651670203217"/>
+      <inertia ixx="0.000127906547739082" ixy="-5.05375803669024e-10" ixz="2.90853360412574e-05" iyy="0.000168931407464894" iyz="-3.16933358393089e-10" izz="0.000103638809145105"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_hip1_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_hip1_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="L_hip2_link">
+    <inertial>
+      <origin xyz="-0.0848241850737188 0.0330439919867859 -0.0024319822187876" rpy="0.0 -0.0 0.0"/>
+      <mass value="2.06272582516213"/>
+      <inertia ixx="0.00194208302225347" ixy="0.000315940351024014" ixz="9.00839822768814e-05" iyy="0.00258465285897819" iyz="-4.0642647695993e-05" izz="0.0022392111777153"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_hip2_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_hip2_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="L_thigh_link">
+    <inertial>
+      <origin xyz="0.0217096596297535 0.0386181642359396 -0.127429584203769" rpy="0.0 -0.0 0.0"/>
+      <mass value="2.02695465095457"/>
+      <inertia ixx="0.00986996283199353" ixy="5.53368417329674e-07" ixz="0.000100443675425187" iyy="0.0109863902075503" iyz="5.11991735957987e-06" izz="0.00152441421831652"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_thigh_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_thigh_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="L_calf_link">
+    <inertial>
+      <origin xyz="0.0388984172246086 0.0275443101753798 -0.0743540005306829" rpy="0.0 -0.0 0.0"/>
+      <mass value="1.32255100135935"/>
+      <inertia ixx="0.00518468533556645" ixy="-3.09018215107561e-06" ixz="-0.000174440375778983" iyy="0.00558007179509112" iyz="2.5398500779775e-05" izz="0.000621318983991005"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_calf_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_calf_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="L_foot_link">
+    <inertial>
+      <origin xyz="-0.000805699942805438 0.0189471503813982 -0.0237547805244879" rpy="0 0 0" />
+      <mass value="0.214661212420411" />
+      <inertia ixx="4.02562164950406E-05" ixy="-1.0138237279121E-09" ixz="4.17012471797606E-06" iyy="0.000770002678918587" iyz="-1.83484988650801E-09" izz="0.000787274566684345"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_foot_long_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://mevita/models/meshes/L_foot_long_link.STL"/>
+      </geometry>
+      <material name="material"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="R_hip_y" type="revolute">
+    <limit lower="-1.0472" upper="1.0472" effort="25" velocity="24"/>
+    <parent link="base_link"/>
+    <child link="R_hip1_link"/>
+    <axis xyz=" 0.  0.  1."/>
+    <origin xyz="0.0 -0.0909999999999956 -0.19905000000001" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="R_hip_r" type="revolute">
+    <limit lower="-0.4538" upper="0.4538" effort="25" velocity="24"/>
+    <parent link="R_hip1_link"/>
+    <child link="R_hip2_link"/>
+    <axis xyz=" 1.  0.  0."/>
+    <origin xyz="0.02799999999999 0.0 -0.071" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="R_hip_p" type="revolute">
+    <limit lower="-3.1416" upper="0.7330" effort="48" velocity="26"/>
+    <parent link="R_hip2_link"/>
+    <child link="R_thigh_link"/>
+    <axis xyz=" 0.  1.  0."/>
+    <origin xyz="-0.11155 -0.0665000000000001 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="R_knee_p" type="revolute">
+    <limit lower="-0.3490" upper="2.7925" effort="48" velocity="26"/>
+    <parent link="R_thigh_link"/>
+    <child link="R_calf_link"/>
+    <axis xyz=" 0.  1.  0."/>
+    <origin xyz="0.0 -0.00699999999999998 -0.35" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="R_ankle_p" type="revolute">
+    <limit lower="-1.2217" upper="1.0123" effort="25" velocity="24"/>
+    <parent link="R_calf_link"/>
+    <child link="R_foot_link"/>
+    <axis xyz=" 0.  1.  0."/>
+    <origin xyz="0.0 0.0055 -0.281416826531746" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="L_hip_y" type="revolute">
+    <limit lower="-1.0472" upper="1.0472" effort="25" velocity="24"/>
+    <parent link="base_link"/>
+    <child link="L_hip1_link"/>
+    <axis xyz=" 0.  0.  1."/>
+    <origin xyz="0.0 0.091 -0.19905000000001" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="L_hip_r" type="revolute">
+    <limit lower="-0.4538" upper="0.4538" effort="25" velocity="24"/>
+    <parent link="L_hip1_link"/>
+    <child link="L_hip2_link"/>
+    <axis xyz=" 1.  0.  0."/>
+    <origin xyz="0.02799999999999 0.0 -0.071" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="L_hip_p" type="revolute">
+    <limit lower="-3.1416" upper="0.7330" effort="48" velocity="26"/>
+    <parent link="L_hip2_link"/>
+    <child link="L_thigh_link"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="-0.11155 0.0665000000000001 0.0" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="L_knee_p" type="revolute">
+    <limit lower="-0.3490" upper="2.7925" effort="48" velocity="26"/>
+    <parent link="L_thigh_link"/>
+    <child link="L_calf_link"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.00699999999999998 -0.35" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <joint name="L_ankle_p" type="revolute">
+    <limit lower="-1.2217" upper="1.0123" effort="25" velocity="24"/>
+    <parent link="L_calf_link"/>
+    <child link="L_foot_link"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 -0.0055 -0.281416826531746" rpy="0.0 -0.0 0.0"/>
+  </joint>
+  <material name="material">
+    <color rgba="0.75294118 0.75294118 0.75294118 1.        "/>
+  </material>
+</robot>
