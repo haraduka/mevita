@@ -3,13 +3,15 @@ This repository includes the hardware and software components of "MEVITA: Open-S
 
 Please refer to the following links for more information.
 - [Project Page](https://haraduka.github.io/mevita-hardware)
-- [arXiv](TODO)
+- [arXiv](https://arxiv.org/abs/2508.17684)
 - [YouTube](https://www.youtube.com/watch?v=_akfHkCne0s)
 
 # Hardware
 
 You can find all the hardware components in the following link
 - [Goodle Drive](https://drive.google.com/drive/folders/1PlmsZT_c0rvLUOtIdCrQJ9vXPVhtB7AJ?usp=sharing)
+
+![](./imgs/design.png)
 
 From the link of RUBIK LINK V2.0, please download the upper computer installation program and make all the motors MIT mode.
 - [AK70-10](https://www.cubemars.com/goods-1031-AK70-10.html)
@@ -19,8 +21,6 @@ From the link of RUBIK LINK V2.0, please download the upper computer installatio
 - Motor Order: L(6-10) --> R(1-5)  / Proximal --> Distal
 - Link Name: L_hip1_link --> L_hip2_link --> L_thigh_link --> L_calf_link --> L_foot_link
 - Joint Name: L_hip_y --> L_hip_r --> L_hip_p --> L_knee_p --> L_ankle_p
-
-![](./imgs/design.png)
 
 # Software Dependencies
 Please install the following dependencies.
